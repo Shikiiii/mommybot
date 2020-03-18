@@ -20,4 +20,4 @@ from storage import *
 async def on_ready():
 	print("Mommy Bot is up!")
 	
-bot.run()
+bot.run(os.environ.get("token"))
