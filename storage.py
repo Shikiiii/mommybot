@@ -1,4 +1,3 @@
-Learn more or give us feedback
 from discord.ext.commands import Bot
 from discord.ext import commands
 import discord
