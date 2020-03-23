@@ -42,7 +42,7 @@ kiss_gifs = [
     
 @bot.command()
 async def kiss(ctx, user: discord.Member):
-	embed = discord.Embed(description="**{.message.author.name}** kisses **{.name}**. <a:kiss:691588990389977189>".format(ctx, user), color=0xFFFFFF, timestamp=datetime.utcnow())
+	embed = discord.Embed(description="**{.message.author.display_name}** kisses **{.display_name}**. <a:kiss:691588990389977189>".format(ctx, user), color=0xFFFFFF, timestamp=datetime.utcnow())
 	embed.set_image(url=random.choice(kiss_gifs))
 	embed.set_footer(text="© MommyBot by Shiki.", icon_url=bot.user.avatar_url)
 	await ctx.send(embed=embed)
@@ -50,12 +50,12 @@ async def kiss(ctx, user: discord.Member):
 @kiss.error
 async def kiss_error(ctx, error):
 	if isinstance(error, commands.MissingRequiredArgument):
-		embed = discord.Embed(description="**Mommy** kisses **{.message.author.name}**. <a:kiss:691588990389977189>".format(ctx), color=0xFFFFFF, timestamp=datetime.utcnow())
+		embed = discord.Embed(description="**Mommy** kisses **{.message.author.display_name}**. <a:kiss:691588990389977189>".format(ctx), color=0xFFFFFF, timestamp=datetime.utcnow())
 		embed.set_image(url=random.choice(kiss_gifs))
 		embed.set_footer(text="© MommyBot by Shiki.", icon_url=bot.user.avatar_url)
 		await ctx.send(embed=embed)
 	elif isinstance(error, commands.BadArgument):
-		embed = discord.Embed(description="**Mommy** kisses **{.message.author.name}**. <a:kiss:691588990389977189>".format(ctx), color=0xFFFFFF, timestamp=datetime.utcnow())
+		embed = discord.Embed(description="**Mommy** kisses **{.message.author.display_name}**. <a:kiss:691588990389977189>".format(ctx), color=0xFFFFFF, timestamp=datetime.utcnow())
 		embed.set_image(url=random.choice(kiss_gifs))
 		embed.set_footer(text="© MommyBot by Shiki.", icon_url=bot.user.avatar_url)
 		await ctx.send(f"**{ctx.message.author.name}** member not found, I kissed you instead.", embed=embed)
