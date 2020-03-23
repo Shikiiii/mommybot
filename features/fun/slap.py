@@ -28,7 +28,7 @@ slap_gifs = [
     
 @bot.command()
 async def slap(ctx, user: discord.Member):
-	embed = discord.Embed(description="**{.message.author.display_name}** slaps **{.display_name}**. <:pensive_heart:681955741279715349>".format(ctx, user), color=0xFFFFFF, timestamp=datetime.utcnow())
+	embed = discord.Embed(description="**{.message.author.display_name}** slaps **{.display_name}**. <a:slap:691589094828015667>".format(ctx, user), color=0xFFFFFF, timestamp=datetime.utcnow())
 	embed.set_image(url=random.choice(slap_gifs))
 	embed.set_footer(text="© MommyBot by Shiki.", icon_url=bot.user.avatar_url)
 	await ctx.send(embed=embed)
@@ -36,12 +36,12 @@ async def slap(ctx, user: discord.Member):
 @slap.error
 async def slap_error(ctx, error):
 	if isinstance(error, commands.MissingRequiredArgument):
-		embed = discord.Embed(description="**Mommy** slaps **{.message.author.display_name}**. <:pensive_heart:681955741279715349>".format(ctx), color=0xFFFFFF, timestamp=datetime.utcnow())
+		embed = discord.Embed(description="**Mommy** slaps **{.message.author.display_name}**. <a:slap:691589094828015667>".format(ctx), color=0xFFFFFF, timestamp=datetime.utcnow())
 		embed.set_image(url=random.choice(slap_gifs))
 		embed.set_footer(text="© MommyBot by Shiki.", icon_url=bot.user.avatar_url)
 		await ctx.send(embed=embed)
 	elif isinstance(error, commands.BadArgument):
-		embed = discord.Embed(description="**Mommy** slaps **{.message.author.display_name}**. <:pensive_heart:681955741279715349>".format(ctx), color=0xFFFFFF, timestamp=datetime.utcnow())
+		embed = discord.Embed(description="**Mommy** slaps **{.message.author.display_name}**. <a:slap:691589094828015667>".format(ctx), color=0xFFFFFF, timestamp=datetime.utcnow())
 		embed.set_image(url=random.choice(slap_gifs))
 		embed.set_footer(text="© MommyBot by Shiki.", icon_url=bot.user.avatar_url)
 		await ctx.send(f"**{ctx.message.author.display_name}** member not found, I slapped you instead", embed=embed)
