@@ -38,7 +38,7 @@ hug_gifs = [
 		"https://cdn.discordapp.com/attachments/671404646459244616/672073393826168842/a.gif"
     ]
     
-@bot.command()
+@bot.command(aliases=["cuddle"])
 async def hug(ctx, user: discord.Member):
 	embed = discord.Embed(description="**{.message.author.display_name}** hugs **{.display_name}**. <a:hug:691588957091397632>".format(ctx, user), color=0xFFFFFF, timestamp=datetime.utcnow())
 	embed.set_image(url=random.choice(hug_gifs))
