@@ -55,7 +55,7 @@ async def kiss_error(ctx, error):
 	elif isinstance(error, commands.BadArgument):
 		embed = discord.Embed(description="**babi** kisses **{.message.author.name}**. <:kiss_babi:681965003116773471>".format(ctx), color=0xFFFFFF, timestamp=datetime.utcnow())
 		embed.set_image(url=random.choice(kiss_gifs))
-		await ctx.send(f"**{ctx.message.author.name}** member not found, I kissed you instead", embed=embed)
+		await ctx.send(f"**{ctx.message.author.name}** member not found, I kissed you instead.", embed=embed)
 	else:
 		print('Ignoring exception in command av:', file=sys.stderr)
 		traceback.print_exception(type(error), error, error.__traceback__, file=sys.stderr)
