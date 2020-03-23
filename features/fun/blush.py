@@ -5,9 +5,8 @@ import datetime
 import asyncio
 import random
 from datetime import datetime
-from cv import *
+from storage import *
 
-# ---------- GIFS ----------
 blush_gifs = [
 		"https://cdn.discordapp.com/attachments/670153232039018516/674297378454634506/tenor.gif",
 		"https://cdn.discordapp.com/attachments/670153232039018516/674297383906967554/tumblr_180b159af06f5854161da3bccaaea1cf_d1d6cd99_540.gif",
