@@ -40,7 +40,7 @@ hug_gifs = [
     
 @bot.command()
 async def hug(ctx, user: discord.Member):
-	embed = discord.Embed(description="**{.message.author.name}** hugs **{.name}**. <a:hug:691588957091397632>".format(ctx, user), color=0xFFFFFF, timestamp=datetime.utcnow())
+	embed = discord.Embed(description="**{.message.author.display_name}** hugs **{.display_name}**. <a:hug:691588957091397632>".format(ctx, user), color=0xFFFFFF, timestamp=datetime.utcnow())
 	embed.set_image(url=random.choice(hug_gifs))
 	embed.set_footer(text="© MommyBot by Shiki.", icon_url=bot.user.avatar_url)
 	await ctx.send(embed=embed)
@@ -48,12 +48,12 @@ async def hug(ctx, user: discord.Member):
 @hug.error
 async def hug_error(ctx, error):
 	if isinstance(error, commands.MissingRequiredArgument):
-		embed = discord.Embed(description="**Mommy** hugs **{.message.author.name}**. <a:hug:691588957091397632>".format(ctx), color=0xFFFFFF, timestamp=datetime.utcnow())
+		embed = discord.Embed(description="**Mommy** hugs **{.message.author.display_name}**. <a:hug:691588957091397632>".format(ctx), color=0xFFFFFF, timestamp=datetime.utcnow())
 		embed.set_image(url=random.choice(hug_gifs))
 		embed.set_footer(text="© MommyBot by Shiki.", icon_url=bot.user.avatar_url)
 		await ctx.send(embed=embed)
 	elif isinstance(error, commands.BadArgument):
-		embed = discord.Embed(description="**Mommy** hugs **{.message.author.name}**. <a:hug:691588957091397632>".format(ctx), color=0xFFFFFF, timestamp=datetime.utcnow())
+		embed = discord.Embed(description="**Mommy** hugs **{.message.author.display_name}**. <a:hug:691588957091397632>".format(ctx), color=0xFFFFFF, timestamp=datetime.utcnow())
 		embed.set_image(url=random.choice(hug_gifs))
 		embed.set_footer(text="© MommyBot by Shiki.", icon_url=bot.user.avatar_url)
 		await ctx.send(f"**{ctx.message.author.name}** member not found, I hugged you instead.", embed=embed)
