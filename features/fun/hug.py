@@ -61,4 +61,5 @@ async def hug_error(ctx, error):
 		print('Ignoring exception in command av:', file=sys.stderr)
 		traceback.print_exception(type(error), error, error.__traceback__, file=sys.stderr)
 		embed = discord.Embed(description="```{}```".format(error), color=0x000000)
+		embed.set_footer(text="© MommyBot by Shiki.", icon_url=bot.user.avatar_url)
 		await ctx.send("An error has occured. Detailed information below:", embed=embed)
