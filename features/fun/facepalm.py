@@ -21,7 +21,7 @@ facepalm_gifs = [
 		"https://cdn.discordapp.com/attachments/671404646459244616/672076407345512459/a.gif"
 ]
 
-@bot.command()
+@bot.command(aliases=["fc"])
 async def facepalm(ctx):
 	gif = random.choice(facepalm_gifs)
 	embed = discord.Embed(description="**{.author.display_name}** facepalms. <a:facepalm:691588917501100053>".format(ctx), color=0xFFFFFF, timestamp=datetime.utcnow())
