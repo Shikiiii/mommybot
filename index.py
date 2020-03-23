@@ -14,7 +14,9 @@ import requests
 
 from storage import *
 
-# This is where I'll import the different files.
+# FUN
+import features.fun.hug
+import features.fun.kiss
 
 @bot.event
 async def on_ready():
