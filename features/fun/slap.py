@@ -26,7 +26,7 @@ slap_gifs = [
 		"https://cdn.discordapp.com/attachments/670153232039018516/674301048638406696/tenor_2.gif"
     ]
     
-@bot.command()
+@bot.command(aliases=["whip"])
 async def slap(ctx, user: discord.Member):
 	embed = discord.Embed(description="**{.message.author.display_name}** slaps **{.display_name}**. <a:slap:691589094828015667>".format(ctx, user), color=0xFFFFFF, timestamp=datetime.utcnow())
 	embed.set_image(url=random.choice(slap_gifs))
