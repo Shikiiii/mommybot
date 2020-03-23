@@ -5,7 +5,7 @@ import datetime
 import asyncio
 import random
 from datetime import datetime
-from cv import *
+from storage import *
 
 poke_gifs = [
     "https://cdn.discordapp.com/attachments/670153232039018516/674299333100961813/b.gif",
