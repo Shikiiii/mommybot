@@ -58,9 +58,10 @@ async def kiss_error(ctx, error):
 		embed = discord.Embed(description="**Mommy** kisses **{.message.author.display_name}**. <a:kiss:691588990389977189>".format(ctx), color=0xFFFFFF, timestamp=datetime.utcnow())
 		embed.set_image(url=random.choice(kiss_gifs))
 		embed.set_footer(text="© MommyBot by Shiki.", icon_url=bot.user.avatar_url)
-		await ctx.send(f"**{ctx.message.author.name}** member not found, I kissed you instead.", embed=embed)
+		await ctx.send(f"**{ctx.message.author.display_name}** member not found, I kissed you instead.", embed=embed)
 	else:
 		print('Ignoring exception in command av:', file=sys.stderr)
 		traceback.print_exception(type(error), error, error.__traceback__, file=sys.stderr)
 		embed = discord.Embed(description="{}".format(error), color=0x000000)
+		embed.set_footer(text="© MommyBot by Shiki.", icon_url=bot.user.avatar_url)
 		await ctx.send("An error has occured. Detailed information below:", embed=embed)
