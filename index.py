@@ -15,8 +15,13 @@ import requests
 from storage import *
 
 # FUN
+import features.fun.blush
+import features.fun.facepalm
 import features.fun.hug
 import features.fun.kiss
+import features.fun.pat
+import features.fun.poke
+import features.fun.slap
 
 @bot.event
 async def on_ready():
