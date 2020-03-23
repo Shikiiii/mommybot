@@ -40,19 +40,25 @@ hug_gifs = [
     
 @bot.command()
 async def hug(ctx, user: discord.Member):
-	embed = discord.Embed(description="**{.message.author.name}** hugs <:zerotwohug:650694698591322134> **{.name}**.".format(ctx, user), color=0xFFFFFF, timestamp=datetime.utcnow())
+	embed = discord.Embed(description="**{.message.author.name}** hugs **{.name}**.".format(ctx, user), color=0xFFFFFF, timestamp=datetime.utcnow())
 	embed.set_image(url=random.choice(hug_gifs))
+	embed.set_thumbnail(url="https://cdn.discordapp.com/emojis/667221349575688202.gif?v=1")
+	embed.set_footer(text="© MommyBot by Shiki.", icon_url=bot.user.avatar_url)
 	await ctx.send(embed=embed)
 	
 @hug.error
 async def hug_error(ctx, error):
 	if isinstance(error, commands.MissingRequiredArgument):
-		embed = discord.Embed(description="**babi** hugs <:zerotwohug:650694698591322134> **{.message.author.name}**.".format(ctx), color=0xFFFFFF, timestamp=datetime.utcnow())
+		embed = discord.Embed(description="**Mommy** hugs **{.message.author.name}**.".format(ctx), color=0xFFFFFF, timestamp=datetime.utcnow())
 		embed.set_image(url=random.choice(hug_gifs))
+		embed.set_thumbnail(url="https://cdn.discordapp.com/emojis/667221349575688202.gif?v=1")
+		embed.set_footer(text="© MommyBot by Shiki.", icon_url=bot.user.avatar_url)
 		await ctx.send(embed=embed)
 	elif isinstance(error, commands.BadArgument):
-		embed = discord.Embed(description="**babi** hugs <:zerotwohug:650694698591322134> **{.message.author.name}**.".format(ctx), color=0xFFFFFF, timestamp=datetime.utcnow())
+		embed = discord.Embed(description="**Mommy** hugs **{.message.author.name}**.".format(ctx), color=0xFFFFFF, timestamp=datetime.utcnow())
 		embed.set_image(url=random.choice(hug_gifs))
+		embed.set_thumbnail(url="https://cdn.discordapp.com/emojis/667221349575688202.gif?v=1")
+		embed.set_footer(text="© MommyBot by Shiki.", icon_url=bot.user.avatar_url)
 		await ctx.send(f"**{ctx.message.author.name}** member not found, I hugged you instead.", embed=embed)
 	else:
 		print('Ignoring exception in command av:', file=sys.stderr)
