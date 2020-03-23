@@ -26,4 +26,5 @@ async def facepalm(ctx):
 	gif = random.choice(facepalm_gifs)
 	embed = discord.Embed(description="**{.author.display_name}** facepalms. <a:facepalm:691588917501100053>".format(ctx), color=0xFFFFFF, timestamp=datetime.utcnow())
 	embed.set_image(url=gif)
+	embed.set_footer(text="© MommyBot by Shiki.", icon_url=bot.user.avatar_url)
 	await ctx.send(embed=embed)
