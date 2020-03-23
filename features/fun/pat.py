@@ -31,7 +31,7 @@ pat_gifs = [
 		"https://cdn.discordapp.com/attachments/670153232039018516/674300074557177892/source.gif"
 ]
     
-@bot.command()
+@bot.command(aliases=["pet"])
 async def pat(ctx, user: discord.Member):
 	embed = discord.Embed(description="**{.message.author.display_name}** pats **{.display_name}**. <a:pat:691589024774750228>".format(ctx, user), color=0xFFFFFF, timestamp=datetime.utcnow())
 	embed.set_image(url=random.choice(pat_gifs))
