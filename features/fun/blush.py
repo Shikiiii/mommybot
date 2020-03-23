@@ -38,4 +38,5 @@ async def blush(ctx):
 	gif = random.choice(blush_gifs)
 	embed = discord.Embed(description="**{.author.display_name}** blushes. <a:blush:691588875495145472>".format(ctx), color=0xFFFFFF, timestamp=datetime.utcnow())
 	embed.set_image(url=gif)
+	embed.set_footer(text="© MommyBot by Shiki.", icon_url=bot.user.avatar_url)
 	await ctx.send(embed=embed)
