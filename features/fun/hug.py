@@ -56,7 +56,7 @@ async def hug_error(ctx, error):
 		embed = discord.Embed(description="**Mommy** hugs **{.message.author.display_name}**. <a:hug:691588957091397632>".format(ctx), color=0xFFFFFF, timestamp=datetime.utcnow())
 		embed.set_image(url=random.choice(hug_gifs))
 		embed.set_footer(text="© MommyBot by Shiki.", icon_url=bot.user.avatar_url)
-		await ctx.send(f"**{ctx.message.author.name}** member not found, I hugged you instead.", embed=embed)
+		await ctx.send(f"**{ctx.message.author.display_name}** member not found, I hugged you instead.", embed=embed)
 	else:
 		print('Ignoring exception in command av:', file=sys.stderr)
 		traceback.print_exception(type(error), error, error.__traceback__, file=sys.stderr)
