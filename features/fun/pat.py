@@ -5,7 +5,7 @@ import datetime
 import asyncio
 import random
 from datetime import datetime
-from cv import *
+from storage import *
 
 pat_gifs = [
     "https://cdn.discordapp.com/attachments/670153232039018516/674299983117156362/1edd1db645f55aa7f2923838b5afabfc863fc109_hq.gif",
