@@ -25,11 +25,11 @@ async def coinflip(ctx, chosenSide: str):
 	flippedSide = random.choice(possibleChoices)
 	if side == flippedSide:
 		afterFlip = discord.Embed(color=0x58ff3b)
-		afterFlip.add_field(name="Your choice: {}".format(side), value="The coin landed on {}.".format(flippedSide))
+		afterFlip.add_field(name="Your choice: {}".format(side), value="The coin landed on **{}**.".format(flippedSide))
 		await message.edit(content="You win!", embed=afterFlip)
 	elif side != flippedSide:
 		afterFlip = discord.Embed(color=0xff3b30)
-		afterFlip.add_field(name="Your choice: {}".format(side), value="The coin landed on {}.".format(flippedSide))
+		afterFlip.add_field(name="Your choice: {}".format(side), value="The coin landed on **{}**.".format(flippedSide))
 		await message.edit(content="You lose!", embed=afterFlip)
 		
 @coinflip.error
@@ -40,8 +40,8 @@ async def coinflip_error(ctx, error):
 		await asyncio.sleep(3)
 		possibleChoices = ["HEADS", "TAILS"]
 		flippedSide = random.choice(possibleChoices)
-		afterFlip = discord.Embed(description="The coin landed on {}.".format(flippedSide), color=0x000000)
-		await message.edit(content="The coin has been flipped.\n\n**__FUN FACT:__** You can specify a side on the coinflip command! For exmaple: ``=coinflip heads``.", embed=afterFlip)
+		afterFlip = discord.Embed(description="The coin landed on **{}**.".format(flippedSide), color=0x000000)
+		await message.edit(content="The coin has been flipped.\n\n**__FUN FACT:__** You can specify a side on the coinflip command! For example: ``=coinflip heads``.", embed=afterFlip)
 	else:
 		print('Ignoring exception in command av:', file=sys.stderr)
 		traceback.print_exception(type(error), error, error.__traceback__, file=sys.stderr)
