@@ -25,6 +25,7 @@ import features.fun.slap
 import features.fun.howgay
 import features.fun.howlesbian
 import features.fun.howhot
+import features.fun.penis
 
 @bot.event
 async def on_ready():
