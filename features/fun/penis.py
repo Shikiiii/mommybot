@@ -26,12 +26,12 @@ async def penis_error(ctx, error):
 		embed.set_footer(text="© MommyBot by Shiki.", icon_url=bot.user.avatar_url)
 		await ctx.send(embed=embed)
 	elif isinstance(error, commands.BadArgument):
-        embed = discord.Embed(color=0xFFFFFF)
-        embed.add_field(name="Error: Member not found. Mommy was selected as the default member.", value="Having problems using the command? Contact a staff member!")
+		embed = discord.Embed(color=0xFFFFFF)
+		embed.add_field(name="Error: Member not found. Mommy was selected as the default member.", value="Having problems using the command? Contact a staff member!")
 		await ctx.send("ngl i would be pretty worried if mommy had a pp", embed=embed)
-    else:
-        print('Ignoring exception in command av:', file=sys.stderr)
-        traceback.print_exception(type(error), error, error.__traceback__, file=sys.stderr)
-        embed = discord.Embed(description="{}".format(error), color=0x000000)
-        embed.set_footer(text="© MommyBot by Shiki.", icon_url=bot.user.avatar_url)
-        await ctx.send("An error has occured. Detailed information below:", embed=embed)
+	else:
+		print('Ignoring exception in command av:', file=sys.stderr)
+		traceback.print_exception(type(error), error, error.__traceback__, file=sys.stderr)
+		embed = discord.Embed(description="{}".format(error), color=0x000000)
+		embed.set_footer(text="© MommyBot by Shiki.", icon_url=bot.user.avatar_url)
+		await ctx.send("An error has occured. Detailed information below:", embed=embed)
