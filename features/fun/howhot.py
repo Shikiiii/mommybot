@@ -17,7 +17,7 @@ async def hotrate_error(ctx, error):
         await ctx.send(f"**{ctx.message.author.name}** is **__{int(random.randint(0, 100))}__**% hot! 🥵")
     elif isinstance(error, commands.BadArgument):
         embed = discord.Embed(color=0xFFFFFF)
-        embed.add_field(name="Error: Member not found. Mommy was selected as the default member.")
+        embed.add_field(name="Error: Member not found. Mommy was selected as the default member.", value="Having problems using the command? Contact a staff member!")
         await ctx.send(f"**Mommy** is **__too hot to be rated__**, duh.", embed=embed)
     else:
         print('Ignoring exception in command av:', file=sys.stderr)
