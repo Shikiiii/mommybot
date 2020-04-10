@@ -27,6 +27,10 @@ import features.fun.howlesbian
 import features.fun.howhot
 import features.fun.penis
 import features.fun.coinflip
+# GENERAL
+import features.general.avatar
+import features.general.snipe
+import features.general.editsnipe
 
 @bot.event
 async def on_ready():
