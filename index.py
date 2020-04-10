@@ -31,6 +31,8 @@ import features.fun.coinflip
 import features.general.avatar
 import features.general.snipe
 import features.general.editsnipe
+# EVENTS
+import features.events.events
 
 @bot.event
 async def on_ready():
