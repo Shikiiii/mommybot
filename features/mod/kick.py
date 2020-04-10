@@ -11,14 +11,14 @@ from storage import *
 @commands.has_permissions(kick_members=True)
 async def kick(ctx, user: discord.Member, *, reasonn: str):
 	try:
-		await user.kick(reason="{} | by {}".format(reasonn, ctx.message.author))
-	except:
-		await ctx.send("Uh! This member has a role higher than mines, I can't kick them.")
-		return
-	try:
 		await user.send("You've been kicked from **{}** by **{}** ({}) for: \n```{}```".format(ctx.message.author.guild.name, ctx.message.author, ctx.message.author.id, reasonn))
 	except:
 		await ctx.send("**{} has been kicked, but they were not notified due to their DMs being closed.** <a:animated_check_emoji:698107059106742372>".format(user.name))
+		return
+	try:
+		await user.kick(reason="{} | by {}".format(reasonn, ctx.message.author))
+	except:
+		await ctx.send("Uh! This member has a role higher than mines, I can't kick them.")
 		return
 	await ctx.send("**{} has been kicked.** <a:animated_check_emoji:698107059106742372>".format(user.name))
 	
@@ -43,14 +43,14 @@ async def kick_error(ctx, error):
 			await ctx.send("An error occurupted this command.", embed=embed)
 			return
 		try:
-			await user.kick(reason="By {}".format(ctx.message.author))
-		except:
-			await ctx.send("Uh! This member has a role higher than mines, I can't kick them.")
-			return
-		try:
 			await user.send("You've been kicked from **{}** by **{}** ({}) for: \n```NO_REASON_PROVIDED```".format(ctx.message.author.guild.name, ctx.message.author, ctx.message.author.id))
 		except:
 			await ctx.send("**{} has been kicked, but they were not notified due to their DMs being closed.** <a:animated_check_emoji:698107059106742372>".format(user.name))
+			return
+		try:
+			await user.kick(reason="By {}".format(ctx.message.author))
+		except:
+			await ctx.send("Uh! This member has a role higher than mines, I can't kick them.")
 			return
 		await ctx.send("**{} has been kicked.** <a:animated_check_emoji:698107059106742372>".format(user.name))
 	elif isinstance(error, commands.CheckFailure):
