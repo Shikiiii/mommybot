@@ -33,6 +33,8 @@ import features.general.snipe
 import features.general.editsnipe
 # EVENTS
 import features.events.events
+# MOD
+import features.mod.kick
 
 @bot.event
 async def on_ready():
