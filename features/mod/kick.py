@@ -30,7 +30,13 @@ async def kick_error(ctx, error):
 		await ctx.send("An error occurupted this command.", embed=embed)
 		return
 	elif isinstance(error, commands.MissingRequiredArgument):
-		user = await commands.MessageConverter().convert(ctx, ctx.message.content[6:])
+		if len(ctx.message.content[6:]) > 0:
+			user = await commands.MessageConverter().convert(ctx, ctx.message.content[6:])
+		else:
+			embed = discord.Embed(color=0xFFFFFF)
+			embed.add_field(name="Error: Member not found. Please make sure you provide the correct information of a member.", value="Having problems using the command? Contact a staff member!")
+			await ctx.send("An error occurupted this command.", embed=embed)
+			return
 		if user is None:
 			embed = discord.Embed(color=0xFFFFFF)
 			embed.add_field(name="Error: Member not found. Please make sure you provide the correct information of a member.", value="Having problems using the command? Contact a staff member!")
