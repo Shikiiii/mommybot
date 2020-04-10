@@ -18,7 +18,7 @@ async def avatar(ctx, user: discord.Member):
 async def avatar_error(ctx, error):
 	if isinstance(error, commands.MissingRequiredArgument):
 		embed = discord.Embed(description="{.mention}".format(ctx.message.author), color=0xFFFFFF)
-		embed.set_author(name="Look at this cutie!", icon_url=user.avatar_url)
+		embed.set_author(name="Look at this cutie!", icon_url=ctx.message.author.avatar_url)
 		embed.set_image(url=ctx.message.author.avatar_url)
 		await ctx.send(embed=embed)
 	elif isinstance(error, commands.BadArgument):
